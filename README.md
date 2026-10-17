@@ -12,5 +12,5 @@ An AI-powered conversational analytics assistant for retail sales data.
 
 - `DB_URL` — PostgreSQL connection string
 - `GROQ_API_KEY` — Groq API key
-- `GROQ_SQL_MODEL` — e.g. `llama-3.3-70b-versatile`
-- `GROQ_FAST_MODEL` — e.g. `llama-3.3-70b-versatile`
+- `GROQ_SQL_MODEL` — e.g. `openai/gpt-oss-120b`
+- `GROQ_FAST_MODEL` — e.g. `openai/gpt-oss-120b`

@@ -67,8 +67,8 @@ SQL_MODEL     = env.get('SQL_MODEL', 'gemma3:12b')
 FAST_MODEL    = env.get('FAST_MODEL', 'mistral')
 DB_URL        = env.get('DB_URL', '')
 GROQ_API_KEY  = env.get('GROQ_API_KEY', '')
-GROQ_SQL_MODEL  = env.get('GROQ_SQL_MODEL', 'llama-3.3-70b-versatile')
-GROQ_FAST_MODEL = env.get('GROQ_FAST_MODEL', 'llama-3.3-70b-versatile')
+GROQ_SQL_MODEL  = env.get('GROQ_SQL_MODEL', 'openai/gpt-oss-120b')
+GROQ_FAST_MODEL = env.get('GROQ_FAST_MODEL', 'openai/gpt-oss-120b')
 
 # ── Word doc export ───────────────────────────────────────────
 try:
