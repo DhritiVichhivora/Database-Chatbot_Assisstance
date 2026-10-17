@@ -1,0 +1,9 @@
+.env
+env
+passwords.txt
+__pycache__/
+*.pyc
+*.pyo
+metadata_cache.txt
+*.png
+.DS_Store
