@@ -221,6 +221,7 @@ def ask_question(req: QuestionRequest):
 
     # ── Ask chatbot ───────────────────────────────────────────
     chatbot.latest_chart_buf = None
+    chatbot.ensure_schema_loaded()
     answer = chatbot.ask(req.question)
     has_chart = chatbot.latest_chart_buf is not None
 

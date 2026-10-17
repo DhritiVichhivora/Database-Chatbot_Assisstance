@@ -169,6 +169,8 @@ def get_metadata():
                 metadata += f"Total rows: {count}\n"
     except Exception as e:
         print(f"  ❌ Metadata error: {e}")
+    if "Table:" not in metadata:
+        return metadata  # DB unreachable — don't cache an empty schema
     try:
         cache_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'metadata_cache.txt')
         with open(cache_path, 'w') as f:
@@ -218,6 +220,15 @@ def get_table_columns():
     return table_cols
 
 table_columns = get_table_columns()
+
+def ensure_schema_loaded():
+    """Reload schema info if it was empty at startup (e.g. DB was unreachable)."""
+    global metadata, special_columns, table_columns
+    if "Table:" in metadata and table_columns:
+        return
+    metadata = get_metadata()
+    special_columns = get_special_columns()
+    table_columns = get_table_columns()
 print(f"  ✅ Table columns loaded: {list(table_columns.keys())}")
 
 
